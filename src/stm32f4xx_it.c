@@ -35,7 +35,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_it.h"
 
-extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim2;
 
 /* External variables --------------------------------------------------------*/
 
@@ -68,8 +68,8 @@ void SysTick_Handler(void)
 /**
 * @brief This function handles TIM4 global interrupt.
 */
-void TIM3_IRQHandler(void)
+void TIM2_IRQHandler(void)
 {
-  HAL_TIM_IRQHandler(&htim3);
+  HAL_TIM_IRQHandler(&htim2);
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
