@@ -73,7 +73,8 @@ void HAL_MspInit(void)
 
 void HAL_TIM_OnePulse_MspInit(TIM_HandleTypeDef* htim_base) {
   GPIO_InitTypeDef GPIO_InitStruct;
-  if (htim_base->Instance == TIM3) {
+  if (htim_base->Instance == TIM3)
+  {
     __TIM3_CLK_ENABLE();
 
     /**TIM3 GPIO Configuration

@@ -183,13 +183,13 @@ void MX_TIM3_Init(void)
 	TIM_OnePulse_InitTypeDef sConfig;
 
 	htim3.Instance = TIM3;
-	htim3.Init.Prescaler = 47;
+	htim3.Init.Prescaler = 42;
 	htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
 	htim3.Init.Period = 65535;
-	HAL_TIM_OnePulse_Init(&htim3, TIM_OPMODE_REPETITIVE);
+	HAL_TIM_OnePulse_Init(&htim3, TIM_OPMODE_SINGLE);
 
 	/* Configure the Channel 1 */
-	sConfig.OCMode = TIM_OCMODE_TOGGLE;
+	sConfig.OCMode = TIM_OCMODE_PWM1;
 	sConfig.OCPolarity = TIM_OCPOLARITY_LOW;
 	sConfig.Pulse = 19999;
 
