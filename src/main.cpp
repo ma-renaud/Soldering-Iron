@@ -37,7 +37,7 @@
 
 
 /* Private variables ---------------------------------------------------------*/
-TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim2, htim3;
 UART_HandleTypeDef huart2;
 
 
@@ -50,6 +50,7 @@ void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_TIM3_Init(void);
 static void MX_USART2_UART_Init(void);
 
 
@@ -71,7 +72,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
   MX_USART2_UART_Init();
+
+  HAL_TIM_OnePulse_Start(&htim3, TIM_CHANNEL_1);
+
 
 #ifdef DEBUG
 	trace_printf("System clock: %u Hz\n", SystemCoreClock);
@@ -170,6 +175,30 @@ static void MX_TIM2_Init(void)
   HAL_NVIC_SetPriority(TIM2_IRQn, 0, 1);
   HAL_NVIC_EnableIRQ(TIM2_IRQn);
 
+}
+
+/* TIM3 init function */
+void MX_TIM3_Init(void)
+{
+	TIM_OnePulse_InitTypeDef sConfig;
+
+	htim3.Instance = TIM3;
+	htim3.Init.Prescaler = 47;
+	htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+	htim3.Init.Period = 65535;
+	HAL_TIM_OnePulse_Init(&htim3, TIM_OPMODE_REPETITIVE);
+
+	/* Configure the Channel 1 */
+	sConfig.OCMode = TIM_OCMODE_TOGGLE;
+	sConfig.OCPolarity = TIM_OCPOLARITY_LOW;
+	sConfig.Pulse = 19999;
+
+	/* Configure the Channel 2 */
+	sConfig.ICPolarity = TIM_ICPOLARITY_RISING;
+	sConfig.ICSelection = TIM_ICSELECTION_DIRECTTI;
+	sConfig.ICFilter = 0;
+
+	HAL_TIM_OnePulse_ConfigChannel(&htim3, &sConfig, TIM_CHANNEL_1, TIM_CHANNEL_2);
 }
 
 /* USART2 init function */
