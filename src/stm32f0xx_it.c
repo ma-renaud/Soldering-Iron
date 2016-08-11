@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * File Name          : mxconstants.h
-  * Description        : This file contains the common defines of the application
+  * @file    stm32f0xx_it.c
+  * @brief   Interrupt Service Routines.
   ******************************************************************************
   *
   * COPYRIGHT(c) 2016 STMicroelectronics
@@ -31,35 +31,49 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_hal.h"
+#include "stm32f0xx.h"
+#include "stm32f0xx_it.h"
 
-/* USER CODE BEGIN Includes */
+extern TIM_HandleTypeDef htim14;
 
-/* USER CODE END Includes */
+/* USER CODE BEGIN 0 */
 
-/* Private define ------------------------------------------------------------*/
+/* USER CODE END 0 */
 
-#define MCO_Pin GPIO_PIN_0
-#define MCO_GPIO_Port GPIOF
-#define VCP_TX_Pin GPIO_PIN_2
-#define VCP_TX_GPIO_Port GPIOA
-#define SWDIO_Pin GPIO_PIN_13
-#define SWDIO_GPIO_Port GPIOA
-#define SWCLK_Pin GPIO_PIN_14
-#define SWCLK_GPIO_Port GPIOA
-#define VCP_RX_Pin GPIO_PIN_15
-#define VCP_RX_GPIO_Port GPIOA
-#define LD3_Pin GPIO_PIN_3
-#define LD3_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
+/* External variables --------------------------------------------------------*/
 
-/* USER CODE END Private defines */
+/******************************************************************************/
+/*            Cortex-M0 Processor Interruption and Exception Handlers         */ 
+/******************************************************************************/
 
 /**
-  * @}
-  */ 
+* @brief This function handles System tick timer.
+*/
+void SysTick_Handler(void)
+{
+  /* USER CODE BEGIN SysTick_IRQn 0 */
+
+  /* USER CODE END SysTick_IRQn 0 */
+  HAL_IncTick();
+  HAL_SYSTICK_IRQHandler();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
+
+  /* USER CODE END SysTick_IRQn 1 */
+}
+
+/******************************************************************************/
+/* STM32F0xx Peripheral Interrupt Handlers                                    */
+/* Add here the Interrupt Handlers for the used peripherals.                  */
+/* For the available peripheral interrupt handler names,                      */
+/* please refer to the startup file (startup_stm32f0xx.s).                    */
+/******************************************************************************/
 
 /**
-  * @}
-*/ 
-
+* @brief This function handles TIM14 global interrupt.
+*/
+void TIM14_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim14);
+}
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

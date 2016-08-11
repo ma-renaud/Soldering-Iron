@@ -1,10 +1,14 @@
 /**
   ******************************************************************************
-  * File Name          : mxconstants.h
-  * Description        : This file contains the common defines of the application
+  * @file    stm32f0xx_hal_pcd_ex.h
+  * @author  MCD Application Team
+  * @version V1.3.1
+  * @date    29-January-2016
+  * @brief   Header file of PCD HAL Extension module.
   ******************************************************************************
+  * @attention
   *
-  * COPYRIGHT(c) 2016 STMicroelectronics
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -29,37 +33,68 @@
   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   *
   ******************************************************************************
-  */
+  */ 
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __STM32L0xx_HAL_PCD_EX_H
+#define __STM32L0xx_HAL_PCD_EX_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+#if defined(STM32F042x6) || defined(STM32F048xx) || defined(STM32F072xB) || defined(STM32F078xx)|| defined(STM32F070xB)|| defined(STM32F070x6)
+
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_hal_def.h"  
+   
+/** @addtogroup STM32F0xx_HAL_Driver
+  * @{
+  */
 
-/* USER CODE BEGIN Includes */
+/** @addtogroup PCDEx
+  * @{
+  */ 
 
-/* USER CODE END Includes */
-
-/* Private define ------------------------------------------------------------*/
-
-#define MCO_Pin GPIO_PIN_0
-#define MCO_GPIO_Port GPIOF
-#define VCP_TX_Pin GPIO_PIN_2
-#define VCP_TX_GPIO_Port GPIOA
-#define SWDIO_Pin GPIO_PIN_13
-#define SWDIO_GPIO_Port GPIOA
-#define SWCLK_Pin GPIO_PIN_14
-#define SWCLK_GPIO_Port GPIOA
-#define VCP_RX_Pin GPIO_PIN_15
-#define VCP_RX_GPIO_Port GPIOA
-#define LD3_Pin GPIO_PIN_3
-#define LD3_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
-
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+/* Internal macros -----------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/
+/** @addtogroup PCDEx_Exported_Functions PCDEx Exported Functions
+  * @{
+  */
+/** @addtogroup PCDEx_Exported_Functions_Group1 Peripheral Control functions
+  * @{
+  */   
+HAL_StatusTypeDef HAL_PCDEx_PMAConfig(PCD_HandleTypeDef *hpcd, 
+                                     uint16_t ep_addr,
+                                     uint16_t ep_kind,
+                                     uint32_t pmaadress);
+/**
+  * @}
+  */ 
+  
 /**
   * @}
   */ 
 
 /**
   * @}
-*/ 
+  */
+
+/**
+  * @}
+  */   
+
+#endif /* STM32F042x6 || STM32F072xB || STM32F078xx || STM32F070xB || STM32F070x6*/
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* __STM32F0xx_HAL_PCD_EX_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+

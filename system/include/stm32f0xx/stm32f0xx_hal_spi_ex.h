@@ -1,10 +1,14 @@
-/**
+ /**
   ******************************************************************************
-  * File Name          : mxconstants.h
-  * Description        : This file contains the common defines of the application
+  * @file    stm32f0xx_hal_spi_ex.h
+  * @author  MCD Application Team
+  * @version V1.3.1
+  * @date    29-January-2016
+  * @brief   Header file of SPI HAL Extended module.
   ******************************************************************************
+  * @attention
   *
-  * COPYRIGHT(c) 2016 STMicroelectronics
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -30,36 +34,60 @@
   *
   ******************************************************************************
   */
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __STM32F0xx_HAL_SPI_EX_H
+#define __STM32F0xx_HAL_SPI_EX_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f0xx_hal_def.h"
 
-/* USER CODE BEGIN Includes */
+/** @addtogroup STM32F0xx_HAL_Driver
+  * @{
+  */
 
-/* USER CODE END Includes */
+/** @addtogroup SPIEx
+  * @{
+  */
 
-/* Private define ------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* Exported macros ------------------------------------------------------------*/
+/* Exported functions --------------------------------------------------------*/
+/** @addtogroup SPIEx_Exported_Functions
+  * @{
+  */
 
-#define MCO_Pin GPIO_PIN_0
-#define MCO_GPIO_Port GPIOF
-#define VCP_TX_Pin GPIO_PIN_2
-#define VCP_TX_GPIO_Port GPIOA
-#define SWDIO_Pin GPIO_PIN_13
-#define SWDIO_GPIO_Port GPIOA
-#define SWCLK_Pin GPIO_PIN_14
-#define SWCLK_GPIO_Port GPIOA
-#define VCP_RX_Pin GPIO_PIN_15
-#define VCP_RX_GPIO_Port GPIOA
-#define LD3_Pin GPIO_PIN_3
-#define LD3_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
+/* Initialization and de-initialization functions  ****************************/
+/* IO operation functions *****************************************************/
+/** @addtogroup SPIEx_Exported_Functions_Group1
+  * @{
+  */
+HAL_StatusTypeDef HAL_SPIEx_FlushRxFifo(SPI_HandleTypeDef *hspi);
+/**
+  * @}
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-*/ 
+  */
+
+/**
+  * @}
+  */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __STM32F0xx_HAL_SPI_EX_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

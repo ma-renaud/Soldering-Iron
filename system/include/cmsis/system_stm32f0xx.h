@@ -1,10 +1,14 @@
 /**
   ******************************************************************************
-  * File Name          : mxconstants.h
-  * Description        : This file contains the common defines of the application
+  * @file    system_stm32f0xx.h
+  * @author  MCD Application Team
+  * @version V2.2.3
+  * @date    29-January-2016
+  * @brief   CMSIS Cortex-M0 Device System Source File for STM32F0xx devices.  
   ******************************************************************************
+  * @attention
   *
-  * COPYRIGHT(c) 2016 STMicroelectronics
+  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -30,36 +34,89 @@
   *
   ******************************************************************************
   */
-/* Includes ------------------------------------------------------------------*/
 
-/* USER CODE BEGIN Includes */
+/** @addtogroup CMSIS
+  * @{
+  */
 
-/* USER CODE END Includes */
+/** @addtogroup stm32f0xx_system
+  * @{
+  */  
+  
+/**
+  * @brief Define to prevent recursive inclusion
+  */
+#ifndef __SYSTEM_STM32F0XX_H
+#define __SYSTEM_STM32F0XX_H
 
-/* Private define ------------------------------------------------------------*/
+#ifdef __cplusplus
+ extern "C" {
+#endif 
 
-#define MCO_Pin GPIO_PIN_0
-#define MCO_GPIO_Port GPIOF
-#define VCP_TX_Pin GPIO_PIN_2
-#define VCP_TX_GPIO_Port GPIOA
-#define SWDIO_Pin GPIO_PIN_13
-#define SWDIO_GPIO_Port GPIOA
-#define SWCLK_Pin GPIO_PIN_14
-#define SWCLK_GPIO_Port GPIOA
-#define VCP_RX_Pin GPIO_PIN_15
-#define VCP_RX_GPIO_Port GPIOA
-#define LD3_Pin GPIO_PIN_3
-#define LD3_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
+/** @addtogroup STM32F0xx_System_Includes
+  * @{
+  */
 
 /**
   * @}
-  */ 
+  */
+
+
+/** @addtogroup STM32F0xx_System_Exported_types
+  * @{
+  */
+  /* This variable is updated in three ways:
+      1) by calling CMSIS function SystemCoreClockUpdate()
+      3) by calling HAL API function HAL_RCC_GetHCLKFreq()
+      3) by calling HAL API function HAL_RCC_ClockConfig()
+         Note: If you use this function to configure the system clock; then there
+               is no need to call the 2 first functions listed above, since SystemCoreClock
+               variable is updated automatically.
+  */
+extern uint32_t SystemCoreClock;             /*!< System Clock Frequency (Core Clock) */
+extern const uint8_t AHBPrescTable[16]; /*!< AHB prescalers table values */
 
 /**
   * @}
-*/ 
+  */
 
+/** @addtogroup STM32F0xx_System_Exported_Constants
+  * @{
+  */
+
+/**
+  * @}
+  */
+
+/** @addtogroup STM32F0xx_System_Exported_Macros
+  * @{
+  */
+
+/**
+  * @}
+  */
+
+/** @addtogroup STM32F0xx_System_Exported_Functions
+  * @{
+  */
+  
+extern void SystemInit(void);
+extern void SystemCoreClockUpdate(void);
+/**
+  * @}
+  */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /*__SYSTEM_STM32F0XX_H */
+
+/**
+  * @}
+  */
+  
+/**
+  * @}
+  */  
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

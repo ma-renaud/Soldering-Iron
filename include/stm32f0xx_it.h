@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * File Name          : mxconstants.h
-  * Description        : This file contains the common defines of the application
+  * @file    stm32f0xx_it.h
+  * @brief   This file contains the headers of the interrupt handlers.
   ******************************************************************************
   *
   * COPYRIGHT(c) 2016 STMicroelectronics
@@ -30,36 +30,29 @@
   *
   ******************************************************************************
   */
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __STM32F0xx_IT_H
+#define __STM32F0xx_IT_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+
 /* Includes ------------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* Exported macro ------------------------------------------------------------*/
+/* Exported functions ------------------------------------------------------- */
 
-/* USER CODE BEGIN Includes */
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void SysTick_Handler(void);
 
-/* USER CODE END Includes */
+#ifdef __cplusplus
+}
+#endif
 
-/* Private define ------------------------------------------------------------*/
-
-#define MCO_Pin GPIO_PIN_0
-#define MCO_GPIO_Port GPIOF
-#define VCP_TX_Pin GPIO_PIN_2
-#define VCP_TX_GPIO_Port GPIOA
-#define SWDIO_Pin GPIO_PIN_13
-#define SWDIO_GPIO_Port GPIOA
-#define SWCLK_Pin GPIO_PIN_14
-#define SWCLK_GPIO_Port GPIOA
-#define VCP_RX_Pin GPIO_PIN_15
-#define VCP_RX_GPIO_Port GPIOA
-#define LD3_Pin GPIO_PIN_3
-#define LD3_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
-
-/**
-  * @}
-  */ 
-
-/**
-  * @}
-*/ 
+#endif /* __STM32F0xx_IT_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
