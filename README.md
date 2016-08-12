@@ -1,6 +1,6 @@
 # Soldering Iron 
 
-This project aim to create a cheap soldering iron for students that can aldo be used as a lab assignement for PID. This firmware control the temperature of a soldering iron using AC phase control.
+This project aims to create a cheap soldering iron for students that can also be used as a lab assignment for PID. This firmware controls the temperature of a soldering iron using AC phase control.
 
 [//]: # "Installation"
 
@@ -14,10 +14,10 @@ This project aim to create a cheap soldering iron for students that can aldo be 
 
 - [x] Zero crossing detection.
 - [x] Timer configuration in one pulse mode.
-- [ ] Ac frequecy detection.
+- [ ] Ac frequency detection.
 - [ ] Triac circuit.
 - [ ] Thermocouple reading.
-- [ ] Temperature and setpoint Display.
+- [ ] Temperature and setpoint display.
 
 ## Credits
 
