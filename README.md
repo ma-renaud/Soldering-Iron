@@ -29,7 +29,7 @@ TODO: Write usage instructions
 
 ## Credits
 
-Thank to [Jarhmander](https://github.com/Jarhmander) for his support and advices.
+Thanks to [Jarhmander](https://github.com/Jarhmander) for his support and advices.
 
 ## License
 
