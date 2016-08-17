@@ -25,4 +25,4 @@ Thanks to [Jarhmander](https://github.com/Jarhmander) for his support and advice
 
 ## License
 
-[![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-yellow.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
+[![License (GPL version 3)](https://img.shields.io/badge/License-GNU%20GPL%20version%203%20-yellow.svg)](http://opensource.org/licenses/GPL-3.0)

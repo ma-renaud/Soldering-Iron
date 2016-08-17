@@ -220,7 +220,7 @@ void MX_TIM3_Init(void)
 	sConfig.ICSelection = TIM_ICSELECTION_DIRECTTI;
 	sConfig.ICFilter = 0;
 
-	HAL_TIM_OnePulse_ConfigChannel(&htim3, &sConfig, TIM_CHANNEL_2, TIM_CHANNEL_1);
+	HAL_TIM_OnePulse_ConfigChannel(&htim3, &sConfig, TIM_CHANNEL_1, TIM_CHANNEL_2);
 } /*--------------------------------------------------------------------------*/
 
 /* TIM14 init function */
